@@ -32,13 +32,15 @@ export default function Login() {
     setCredentials({ ...credentials, [e.target.name]: e.target.value })
   }
 
+
+  
   return (
     <div style={{backgroundImage: 'url("https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', height: '100vh', backgroundSize: 'cover' }}>
       <div>
         <Navbar />
       </div>
-      <div className='container ' style={{paddingTop:"200px"}}>
-        <form className='w-50 m-auto  border bg-dark border-success rounded '  onSubmit={handleSubmit}>
+      <div className='container ' style={{paddingTop:"200px", fontFamily: 'arial'}}>
+        <form className='w-50 m-auto '  onSubmit={handleSubmit} style={{backdropFilter:'blur(30px)',boxShadow:'0px 0px 30px rgba(227,228,237,0.18)', border:'2px solid rgba(255,255,255,0.58)', borderRadius:'10px'}}>
           <div className="m-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
             <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />
@@ -48,8 +50,8 @@ export default function Login() {
             <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
             <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' />
           </div>
-          <button type="submit" className="m-3 btn btn-success">Submit</button>
-          <Link to="/signup" className="m-3 mx-1 btn btn-danger">New User</Link>
+          <button type="submit" className="m-3 btn submit-btn" style={{ backgroundColor:'rgba(255,255,255,0.3)', border:'white', color:'white'}}>Submit</button>
+          <Link to="/signup" className="m-3 mx-1 btn btn-danger" style={{opacity:"70%"}}>New User</Link>
         </form>
       </div>
     </div>

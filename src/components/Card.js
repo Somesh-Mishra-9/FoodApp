@@ -64,20 +64,20 @@ export default function Card(props) {
   return (
     <div>
 
-      <div className="card mt-3" style={{ width: "16rem", maxHeight: "360px" }}>
-        <img src={props.ImgSrc} className="card-img-top" alt="..." style={{ height: "120px", objectFit: "fill" }} />
+      <div className="card mt-3" style={{ width: "20rem", maxHeight: "400px" }}>
+        <img src={props.ImgSrc} className="card-img-top" alt="..." style={{ height: "150px", objectFit: "cover" }} />
         <div className="card-body">
           <h5 className="card-title">{props.foodName}</h5>
           {/* <p className="card-text">This is some random text. This is description.</p> */}
           <div className='container w-100 p-0' style={{ height: "38px" }}>
-            <select className="m-2 h-100 w-20 bg-success text-black rounded" style={{ color: "#FF0000",  }}
+            <select className="m-2 h-100 w-20   rounded" style={{ backgroundColor:'rgba(255,255,255,0.7)', border:'white', color:'grey'}}
  onClick={handleClick} onChange={handleQty}>
               {Array.from(Array(6), (e, i) => {
                 return (
                   <option key={i + 1} value={i + 1}>{i + 1}</option>)
               })}
             </select>
-            <select className="m-2 h-100 w-20 bg-success text-black rounded" style={{ select: "#FF0000" }} ref={priceRef} onClick={handleClick} onChange={handleOptions}>
+            <select className="m-2 h-100 w-20  rounded" style={{ backgroundColor:'rgba(255,255,255,0.7)', border:'white',color:'grey'}} ref={priceRef} onClick={handleClick} onChange={handleOptions}>
               {priceOptions.map((i) => {
                 return <option key={i} value={i}>{i}</option>
               })}
@@ -87,7 +87,7 @@ export default function Card(props) {
             </div>
           </div>
           <hr></hr>
-          <button className={`btn btn-success justify-center ms-2 `} onClick={handleAddToCart}>Add to Cart</button>
+          <button className={`btn  justify-center ms-2 add-to-cart-btn`} style={{ backgroundColor:'rgba(255,255,255,0.3)', border:'white',color:'white'}} onClick={handleAddToCart}>Add to Cart</button>
           {/* <button className={`btn btn-danger justify-center ms-2 ${btnEnable ? "" : "disabled"}`} onClick={handleRemoveCart}>Remove</button> */}
         </div>
       </div>

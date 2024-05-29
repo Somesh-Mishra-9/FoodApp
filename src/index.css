@@ -24,3 +24,15 @@ code {
 .carousalImg{
   object-fit: contain !important;
 }
+
+input{
+  background-color:rgba(255,255,255,0.18) !important;
+  border:2px solid rgba(255,255,255,0.2) !important;
+  color:#fff !important;
+}
+
+
+.submit-btn:hover,.search-btn:hover,.location-btn:hover,.login-btn:hover,.signup-btn:hover, .add-to-cart-btn:hover {
+  background-color: rgba(255,255,255,0.5) !important;
+}
+

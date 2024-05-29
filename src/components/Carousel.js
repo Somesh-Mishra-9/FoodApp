@@ -15,7 +15,7 @@ export default function Carousel({ search, setSearch }) {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <button className="btn text-white bg-success" type="submit" onClick={(e)=>{e.preventDefault()}}>Search</button>
+              <button className="btn search-btn" style={{ backgroundColor:'rgba(255,255,255,0.3)', border:'white', color:'white'}} type="submit" onClick={(e)=>{e.preventDefault()}}>Search</button>
             </form>
           </div>
           <div className="carousel-item active">

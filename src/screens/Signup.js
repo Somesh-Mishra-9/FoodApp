@@ -68,15 +68,15 @@ export default function Signup() {
       <Navbar />
       </div>
 
-        <div className='container' style={{paddingTop:"100px"}} >
-          <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+        <div className='container' style={{paddingTop:"100px",fontFamily: 'arial'}} >
+          <form className='w-50 m-auto mt-5'  style={{backdropFilter:'blur(30px)',boxShadow:'0px 0px 30px rgba(227,228,237,0.18)', border:'2px solid rgba(255,255,255,0.18)', borderRadius:'10px'}}onSubmit={handleSubmit}>
             <div className="m-3">
               <label htmlFor="name" className="form-label">Name</label>
-              <input type="text" className="form-control" name='name' value={credentials.name} onChange={onChange} aria-describedby="emailHelp" />
+              <input type="text" className="form-control" name='name' value={credentials.name} onChange={onChange} aria-describedby="emailHelp" placeholder='Enter your name' style={{backgroundColor:'rgba(255,255,255,0.18)',border:'2px solid rgba(255,255,255,0.2)', color:'#fff'} }/>
             </div>
             <div className="m-3">
               <label htmlFor="email" className="form-label">Email address</label>
-              <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />
+              <input type="email" className="form-control" placeholder='Enter your email' name='email' value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />
             </div>
             <div className="m-3">
               <label htmlFor="address" className="form-label">Address</label>
@@ -85,13 +85,13 @@ export default function Signup() {
               </fieldset>
             </div>
             <div className="m-3">
-              <button type="button" onClick={handleClick} name="geolocation" className=" btn btn-success">Click for current Location </button>
+              <button type="button" onClick={handleClick} name="geolocation" className=" btn location-btn" style={{ backgroundColor:'rgba(255,255,255,0.3)', border:'white', color:'white'}}>Click for current Location </button>
             </div>
             <div className="m-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-              <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' />
+              <input type="password" placeholder='Enter your password' className="form-control" value={credentials.password} onChange={onChange} name='password' />
             </div>
-            <button type="submit" className="m-3 btn btn-success">Submit</button>
+            <button type="submit" className="m-3 btn submit-btn" style={{ backgroundColor:'rgba(255,255,255,0.3)', border:'white', color:'white'}}>Submit</button>
             <Link to="/login" className="m-3 mx-1 btn btn-danger">Already a user</Link>
           </form>
         </div>
