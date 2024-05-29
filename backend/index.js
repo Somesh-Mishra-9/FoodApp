@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 const db = require('./db');
@@ -15,15 +16,23 @@ db((err, data, CatData) => {
   console.log('Database loaded successfully');
 });
 
-// Middleware to enable CORS for a specific origin
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+// Allowed origins
+const allowedOrigins = [
+  'https://66573f52d5f9192af9b8e137--exquisite-zabaione-9f2682.netlify.app',
+  'http://localhost:3000'
+];
+
+// CORS middleware
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 
 // Middleware to parse JSON requests
 app.use(express.json());
