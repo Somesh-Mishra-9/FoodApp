@@ -7,7 +7,7 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("process.env.REACT_APP_API_URL/api/auth/login", {
+    const response = await fetch("http://localhost:5000/api/auth/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -37,8 +37,8 @@ export default function Login() {
       <div>
         <Navbar />
       </div>
-      <div className='container'>
-        <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+      <div className='container ' style={{paddingTop:"200px"}}>
+        <form className='w-50 m-auto  border bg-dark border-success rounded '  onSubmit={handleSubmit}>
           <div className="m-3">
             <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
             <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />

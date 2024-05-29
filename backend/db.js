@@ -1,6 +1,6 @@
 
 const mongoose = require('mongoose');
-const mongoURI = process.env.MONGO_URI;
+const mongoURI = 'mongodb+srv://someshmishra3436:Somesh%403436@cluster0.otirgr3.mongodb.net/Fooddeliverysite';
 
 module.exports = async function (callback) {
     try {

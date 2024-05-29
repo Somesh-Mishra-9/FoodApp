@@ -21,7 +21,7 @@ export default function Signup() {
     // console.log(latlong)
     let [lat, long] = latlong
     console.log(lat, long)
-    const response = await fetch("process.env.REACT_APP_API_URL/api/auth/getlocation", {
+    const response = await fetch("http://localhost:5000/api/auth/getlocation", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -37,9 +37,7 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("process.env.REACT_APP_API_URL/api/auth/createuser", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
+    const response = await fetch("http://localhost:5000/api/auth/createuser", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -70,7 +68,7 @@ export default function Signup() {
       <Navbar />
       </div>
 
-        <div className='container' >
+        <div className='container' style={{paddingTop:"100px"}} >
           <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
             <div className="m-3">
               <label htmlFor="name" className="form-label">Name</label>
