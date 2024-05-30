@@ -64,7 +64,7 @@ export default function Card(props) {
   return (
     <div>
 
-      <div className="card mt-3" style={{ width: "20rem", maxHeight: "400px" }}>
+      <div className="card mt-3" style={{ width: "20rem", maxHeight: "400px",marginLeft:"1rem" }}>
         <img src={props.ImgSrc} className="card-img-top" alt="..." style={{ height: "150px", objectFit: "cover" }} />
         <div className="card-body">
           <h5 className="card-title">{props.foodName}</h5>
