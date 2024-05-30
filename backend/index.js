@@ -19,6 +19,7 @@ db((err, data, CatData) => {
 // Allowed origins
 const allowedOrigins = [
   'https://66573f52d5f9192af9b8e137--exquisite-zabaione-9f2682.netlify.app',
+  'https://exquisite-zabaione-9f2682.netlify.app',
   'http://localhost:3000'
 ];
 
